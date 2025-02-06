@@ -30,14 +30,14 @@ public class TrafficLightLane implements TrafficLightObserver {
     }
 
     // need to be refactored
-    public List<Car> popCar() {
-        List<Car> result = new ArrayList<>();
+    public List<String> getExitedVehicles() {
+        List<String> result = new ArrayList<>();
         // if trafficLane has two lane in (two situations)
         if (carQueue.size() > 1 && (laneType == LaneType.NORTH_FORWARD || laneType == LaneType.SOUTH_FORWARD)) {
-            result.add(carQueue.removeFirst());
+            result.add(carQueue.removeFirst().vehicleId());
         }
         if (!carQueue.isEmpty()) {
-            result.add(carQueue.removeFirst());
+            result.add(carQueue.removeFirst().vehicleId());
         }
         return result;
     }
