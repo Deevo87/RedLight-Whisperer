@@ -11,12 +11,12 @@ public class Intersection {
     private final int RED_LIGHT_CHANGE_BUFFER = 2;
 
     private final CommandList commandList;
+    private final StepStatuses stepStatuses = new StepStatuses();
     private final Map<LaneGroup, List<TrafficLightLane>> trafficLaneGroupMap = new HashMap<>();
     private final Map<LaneType, TrafficLightLane> lanes = new HashMap<>();
     private final Map<LaneGroup, Integer> trafficGroupCnts = new HashMap<>();
     private LaneGroup previousFlowGroup = null;
     private LaneGroup biggestFlowGroup;
-    private final List<List<Car>> stepResults = new ArrayList<>();
 
     public Intersection(CommandList commandList) {
         this.commandList = commandList;
@@ -50,7 +50,7 @@ public class Intersection {
         trafficLaneGroupMap.put(laneGroup, trafficList);
     }
 
-    public List<List<Car>> startSimulation() {
+    public void startSimulation() {
         int i = 0;
         while (i < commandList.commands().size()) {
             Command command = commandList.commands().get(i);
@@ -61,33 +61,33 @@ public class Intersection {
                     lanes.get(car.startRoad().getCarMovement(car.endRoad())).addCarToQueue(car);
                 }
                 case CommandType.STEP -> {
-                    List<Car> currentStep = new ArrayList<>();
+                    StepStatus currentStep = new StepStatus();
                     calculatePriority();
 
                     if (trafficLaneGroupMap.get(biggestFlowGroup).getFirst().getCurrentLight() == Light.GREEN) {
                         i += 1;
                         for (TrafficLightLane lane : trafficLaneGroupMap.get(biggestFlowGroup)) {
                             trafficGroupCnts.put(biggestFlowGroup, trafficGroupCnts.get(biggestFlowGroup) - 1);
-                            currentStep.addAll(lane.popCar());
+                            currentStep.addVehicle(lane.getExitedVehicles());
                         }
 
                         switch (biggestFlowGroup) {
                             case NS_FORWARD -> {
                                 for (TrafficLightLane lane : trafficLaneGroupMap.get(LaneGroup.NS_TURN_RIGHT)) {
                                     trafficGroupCnts.put(biggestFlowGroup, trafficGroupCnts.get(LaneGroup.NS_TURN_RIGHT) - 1);
-                                    currentStep.addAll(lane.popCar());
+                                    currentStep.addVehicle(lane.getExitedVehicles());
                                 }
                             }
                             case EW_FORWARD -> {
                                 for (TrafficLightLane lane : trafficLaneGroupMap.get(LaneGroup.EW_TURN_RIGHT)) {
                                     trafficGroupCnts.put(biggestFlowGroup, trafficGroupCnts.get(LaneGroup.EW_TURN_RIGHT) - 1);
-                                    currentStep.addAll(lane.popCar());
+                                    currentStep.addVehicle(lane.getExitedVehicles());
                                 }
                             }
                         }
 
                         previousFlowGroup = biggestFlowGroup;
-                        stepResults.add(currentStep);
+                        stepStatuses.addStepStatus(currentStep);
                     }
 
                 }
@@ -95,7 +95,6 @@ public class Intersection {
                 }
             }
         }
-        return stepResults;
     }
 
     private void calculatePriority() {
@@ -125,5 +124,9 @@ public class Intersection {
         for (TrafficLightLane lane : trafficLaneGroupMap.get(group)) {
             lane.onLightChange();
         }
+    }
+
+    public StepStatuses getStepStatuses() {
+        return stepStatuses;
     }
 }
