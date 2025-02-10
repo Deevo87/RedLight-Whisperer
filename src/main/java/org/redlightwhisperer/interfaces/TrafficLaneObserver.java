@@ -1,4 +1,4 @@
-package org.redlightwhisperer;
+package org.redlightwhisperer.interfaces;
 
 import org.redlightwhisperer.enums.LaneType;
 import org.redlightwhisperer.enums.Light;

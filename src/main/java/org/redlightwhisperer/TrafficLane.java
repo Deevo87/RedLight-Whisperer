@@ -4,6 +4,7 @@ import org.redlightwhisperer.enums.LaneType;
 import org.redlightwhisperer.enums.Light;
 import org.redlightwhisperer.enums.VehicleState;
 import org.redlightwhisperer.gui.IntersectionController;
+import org.redlightwhisperer.interfaces.TrafficSignalObserver;
 
 import java.util.LinkedList;
 import java.util.List;

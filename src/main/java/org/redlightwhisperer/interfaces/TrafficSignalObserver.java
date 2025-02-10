@@ -1,4 +1,4 @@
-package org.redlightwhisperer;
+package org.redlightwhisperer.interfaces;
 
 
 public interface TrafficSignalObserver {

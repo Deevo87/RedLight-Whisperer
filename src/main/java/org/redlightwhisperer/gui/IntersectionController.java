@@ -14,6 +14,7 @@ import org.redlightwhisperer.*;
 import org.redlightwhisperer.enums.LaneType;
 import org.redlightwhisperer.enums.Light;
 import org.redlightwhisperer.enums.VehicleState;
+import org.redlightwhisperer.interfaces.TrafficLaneObserver;
 import org.redlightwhisperer.utils.LanePositions;
 
 import java.util.ArrayList;
