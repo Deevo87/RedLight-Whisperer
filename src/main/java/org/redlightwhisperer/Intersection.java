@@ -198,7 +198,7 @@ public class Intersection {
         try {
             objectMapper.writeValue(new File(outputFilename), stepStatuses);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to save step statuses to file: " + outputFilename, e);
         }
     }
 
@@ -206,7 +206,8 @@ public class Intersection {
         try {
             Thread.sleep(time);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            Thread.currentThread().interrupt();
+            throw new RuntimeException("Simulation delay interrupted after " + time + " ms", e);
         }
     }
 }
