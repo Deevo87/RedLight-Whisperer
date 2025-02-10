@@ -25,7 +25,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         List<String> args = getParameters().getRaw();
         if (args.size() <= 1) {
-            throw new IllegalArgumentException("Invalid arguments. Usage: mvn clean javafx:run -Djavafx.args=\"<command_file>.json <output_file>.json\"");
+            throw new IllegalArgumentException("Invalid arguments. Usage: mvn javafx:run -Djavafx.args=\"<command_file>.json <output_file>.json\"");
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
