@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane fx:id="rootPane" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.redlightwhisperer.gui.IntersectionController">
+    <Rectangle fill="darkgray" height="325.0" layoutY="-90.0" width="800.0" y="325.0" />
+    <Rectangle fill="darkgray" height="800" layoutX="-137.0" width="375.0" x="350.0" y="0" />
+
+    <Pane id="carLayer" fx:id="carLayer" />
+    <Line endX="40.0" layoutX="174.0" layoutY="235.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="174.0" layoutY="285.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="174.0" layoutY="335.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="174.0" layoutY="410.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="174.0" layoutY="460.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="174.0" layoutY="510.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="174.0" layoutY="560.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="763.0" layoutY="235.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="763.0" layoutY="285.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="763.0" layoutY="335.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="763.0" layoutY="385.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="763.0" layoutY="460.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="763.0" layoutY="510.0" startX="-174.0" />
+    <Line endX="40.0" layoutX="763.0" layoutY="560.0" startX="-174.0" />
+    <Rectangle id="westTurnRight" fx:id="westTurnRight" fill="red" height="20" layoutX="439.0" layoutY="-120.0" width="20" x="150" y="370" />
+    <Rectangle id="westForward" fx:id="westForward" fill="red" height="20" layoutX="-61.0" layoutY="-70.0" width="20" x="650" y="370" />
+    <Rectangle id="westTurnLeft" fx:id="westTurnLeft" fill="red" height="20" layoutX="-61.0" layoutY="-19.0" width="20" x="650" y="370" />
+    <Rectangle id="eastTurnLeft" fx:id="eastTurnLeft" fill="red" height="20" layoutX="-455.0" layoutY="57.0" width="20" x="650" y="370" />
+    <Rectangle id="eastForward" fx:id="eastForward" fill="red" height="20" layoutX="-455.0" layoutY="108.0" width="20" x="650" y="370" />
+    <Rectangle id="eastTurnRight" fx:id="eastTurnRight" fill="red" height="20" layoutX="-455.0" layoutY="157.0" width="20" x="650" y="370" />
+    <Line endX="-131.5" endY="75.5" layoutX="345.0" layoutY="159.0" startX="-133.0" startY="-159.0" />
+    <Line endX="-133.0" endY="75.5" layoutX="722.0" layoutY="159.0" startX="-133.0" startY="-159.0" />
+    <Line endX="-131.5" endY="75.5" layoutX="395.0" layoutY="158.0" startX="-133.0" startY="-159.0" />
+    <Line endX="-131.5" endY="75.5" layoutX="445.0" layoutY="158.0" startX="-133.0" startY="-159.0" />
+    <Line endX="-131.5" endY="75.5" layoutX="495.0" layoutY="158.0" startX="-133.0" startY="-159.0" />
+    <Line endX="-131.5" endY="75.5" layoutX="545.0" layoutY="158.0" startX="-133.0" startY="-159.0" />
+    <Line endX="-131.5" endY="75.5" layoutX="570.0" layoutY="158.0" startX="-133.0" startY="-159.0" />
+    <Line endX="-131.5" endY="75.5" layoutX="620.0" layoutY="158.0" startX="-133.0" startY="-159.0" />
+    <Line endX="-131.5" endY="75.5" layoutX="670.0" layoutY="158.0" startX="-133.0" startY="-159.0" />
+
+    <Rectangle id="northTurnRight" fx:id="northTurnRight" fill="red" height="20" layoutX="-142.0" layoutY="65.0" width="20" x="370" y="150" />
+    <Rectangle id="northForward1" fx:id="northForward1" fill="red" height="20" layoutX="-90.0" layoutY="65.0" width="20" x="370" y="150" />
+    <Rectangle id="northForward2" fx:id="northForward2" fill="red" height="20" layoutX="-43.0" layoutY="65.0" width="20" x="370" y="150" />
+    <Rectangle id="northTurnLeft" fx:id="northTurnLeft" fill="red" height="20" layoutX="11.0" layoutY="65.0" width="20" x="370" y="150" />
+    <Line endX="-131.5" endY="79.0" layoutX="345.0" layoutY="721.0" startX="-133.0" startY="-160.0" />
+    <Line endX="-133.0" endY="79.0" layoutX="722.0" layoutY="721.0" startX="-133.0" startY="-160.0" />
+    <Line endX="-131.5" endY="79.0" layoutX="395.0" layoutY="720.0" startX="-133.0" startY="-160.0" />
+    <Line endX="-131.5" endY="79.0" layoutX="445.0" layoutY="720.0" startX="-133.0" startY="-160.0" />
+    <Line endX="-131.5" endY="79.0" layoutX="495.0" layoutY="720.0" startX="-133.0" startY="-160.0" />
+    <Line endX="-131.5" endY="79.0" layoutX="520.0" layoutY="720.0" startX="-133.0" startY="-160.0" />
+    <Line endX="-131.5" endY="79.0" layoutX="570.0" layoutY="720.0" startX="-133.0" startY="-160.0" />
+    <Line endX="-131.5" endY="79.0" layoutX="620.0" layoutY="720.0" startX="-133.0" startY="-160.0" />
+    <Line endX="-131.5" endY="79.0" layoutX="670.0" layoutY="720.0" startX="-133.0" startY="-160.0" />
+    <Rectangle id="southTurnLeft" fx:id="southTurnLeft" fill="red" height="20" layoutX="33.0" layoutY="-89.0" width="20" x="370" y="650" />
+    <Rectangle id="southForward1" fx:id="southForward1" fill="red" height="20" layoutX="82.0" layoutY="-89.0" width="20" x="370" y="650" />
+    <Rectangle id="southForward2" fx:id="southForward2" fill="red" height="20" layoutX="134.0" layoutY="-89.0" width="20" x="370" y="650" />
+    <Rectangle id="southTurnRight" fx:id="southTurnRight" fill="red" height="20" layoutX="184.0" layoutY="-89.0" width="20" x="370" y="650" />
+   <Label id="northTurnRightCnt" fx:id="northTurnRightCnt" alignment="CENTER" layoutX="218.0" layoutY="120.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="northForward1Cnt" fx:id="northForward1Cnt" alignment="CENTER" layoutX="269.0" layoutY="120.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="northForward2Cnt" fx:id="northForward2Cnt" alignment="CENTER" layoutX="317.0" layoutY="120.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="northTurnLeftCnt" fx:id="northTurnLeftCnt" alignment="CENTER" layoutX="367.0" layoutY="120.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="southTurnLeftCnt" fx:id="southTurnLeftCnt" alignment="CENTER" layoutX="393.0" layoutY="668.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="southForward1Cnt" fx:id="southForward1Cnt" alignment="CENTER" layoutX="441.0" layoutY="667.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="southForward2Cnt" fx:id="southForward2Cnt" alignment="CENTER" layoutX="493.0" layoutY="667.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="southTurnRightCnt" fx:id="southTurnRightCnt" alignment="CENTER" layoutX="543.0" layoutY="667.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="eastTurnLeftCnt" fx:id="eastTurnLeftCnt" alignment="CENTER" layoutX="91.0" layoutY="424.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="eastForwardCnt" fx:id="eastForwardCnt" alignment="CENTER" layoutX="91.0" layoutY="475.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="eastTurnRightCnt" fx:id="eastTurnRightCnt" alignment="CENTER" layoutX="91.0" layoutY="524.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="westTurnRightCnt" fx:id="westTurnRightCnt" alignment="CENTER" layoutX="676.0" layoutY="247.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="westForwardCnt" fx:id="westForwardCnt" alignment="CENTER" layoutX="676.0" layoutY="298.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+   <Label id="westTurnLeftCnt" fx:id="westTurnLeftCnt" alignment="CENTER" layoutX="676.0" layoutY="347.0" prefHeight="26.0" prefWidth="41.0" text="0" />
+</Pane>
