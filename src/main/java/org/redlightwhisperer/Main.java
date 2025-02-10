@@ -24,15 +24,17 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         List<String> args = getParameters().getRaw();
-
-        for (String arg : args) {
-            System.out.println(arg);
+        if (args.size() <= 1) {
+            throw new IllegalArgumentException("Invalid arguments. Usage: mvn clean javafx:run -Djavafx.args=\"<command_file>.json <output_file>.json\"");
         }
+
         ObjectMapper objectMapper = new ObjectMapper();
         CommandList commandList;
         try {
-            System.out.println(args.getFirst());
             commandList = objectMapper.readValue(new File("src/main/resources/" + args.getFirst()), CommandList.class);
+            if (commandList.commands().isEmpty()) {
+                throw new RuntimeException("No commands provided. Please specify a valid command list.");
+            }
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Couldn't parse json, error: " + e);
         } catch (IOException e) {
