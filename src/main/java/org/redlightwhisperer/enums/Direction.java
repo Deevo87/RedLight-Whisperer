@@ -27,23 +27,23 @@ public enum Direction {
         throw new IllegalArgumentException("Unknown direction type: " + value);
     }
 
-    public LaneType getCarMovement(Direction destination) {
+    public LaneType getVehicleMovement(Direction destination) {
         if (destination == this) {
             throw new IllegalStateException("You can't turn around! Destination has to be different than starting road.");
         }
 
         return switch (this) {
-            case NORTH -> (destination == WEST) ? LaneType.NORTH_TURN_RIGHT:
-                    (destination == EAST) ? LaneType.NORTH_TURN_LEFT :
+            case NORTH -> (destination == WEST) ? LaneType.NORTH_TURN_LEFT:
+                    (destination == EAST) ? LaneType.NORTH_TURN_RIGHT :
                            LaneType.NORTH_FORWARD;
-            case SOUTH -> (destination == EAST) ? LaneType.SOUTH_TURN_RIGHT :
-                    (destination == WEST) ? LaneType.SOUTH_TURN_LEFT :
+            case SOUTH -> (destination == EAST) ? LaneType.SOUTH_TURN_LEFT :
+                    (destination == WEST) ? LaneType.SOUTH_TURN_RIGHT :
                             LaneType.SOUTH_FORWARD;
-            case EAST -> (destination == NORTH) ? LaneType.EAST_TURN_RIGHT :
-                    (destination == SOUTH) ? LaneType.EAST_TURN_LEFT :
+            case EAST -> (destination == NORTH) ? LaneType.EAST_TURN_LEFT :
+                    (destination == SOUTH) ? LaneType.EAST_TURN_RIGHT :
                             LaneType.EAST_FORWARD;
-            case WEST -> (destination == SOUTH) ? LaneType.WEST_TURN_RIGHT :
-                    (destination == NORTH) ? LaneType.WEST_TURN_LEFT :
+            case WEST -> (destination == SOUTH) ? LaneType.WEST_TURN_LEFT :
+                    (destination == NORTH) ? LaneType.WEST_TURN_RIGHT :
                             LaneType.WEST_FORWARD;
         };
     }
