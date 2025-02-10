@@ -7,7 +7,7 @@ import org.redlightwhisperer.enums.Direction;
 
 public class Command {
     private final CommandType type;
-    private Car car;
+    private Vehicle vehicle;
 
     @JsonCreator
     public Command(@JsonProperty("type") CommandType type,
@@ -16,12 +16,12 @@ public class Command {
                    @JsonProperty("endRoad") Direction endRoad) {
        this.type = type;
        if (type == CommandType.ADD_VEHICLE) {
-           this.car = new Car(vehicleId, startRoad, endRoad);
+           this.vehicle = new Vehicle(vehicleId, startRoad, endRoad);
        }
     }
 
-    public Car getCar() {
-        return car;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
     public CommandType getType() {
