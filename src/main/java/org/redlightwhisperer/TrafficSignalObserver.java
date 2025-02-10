@@ -1,6 +1,6 @@
 package org.redlightwhisperer;
 
 
-public interface TrafficLightObserver {
+public interface TrafficSignalObserver {
      void onLightChange();
 }
