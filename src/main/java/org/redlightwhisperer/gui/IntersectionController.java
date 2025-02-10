@@ -46,7 +46,7 @@ public class IntersectionController implements TrafficLaneObserver {
     }
 
     @FXML
-    public void initialize() {
+    private void initialize() {
         initializeLights();
     }
 
@@ -112,18 +112,16 @@ public class IntersectionController implements TrafficLaneObserver {
     }
 
     private void startEngine() {
-        if (commandList != null) {
-            intersection = new Intersection(commandList, this, outputFilename);
-            Thread engineThread = new Thread(() -> {
-                intersection.startSimulation();
-                Platform.runLater(Platform::exit);
-            });
-            engineThread.setDaemon(true);
-            engineThread.start();
-        }
+        intersection = new Intersection(commandList, this, outputFilename);
+        Thread engineThread = new Thread(() -> {
+            intersection.startSimulation();
+            Platform.runLater(Platform::exit);
+        });
+        engineThread.setDaemon(true);
+        engineThread.start();
     }
 
-    public void addVehicleToPane(LaneType lane, Point2D position) {
+    private void addVehicleToPane(LaneType lane, Point2D position) {
         Rectangle vehicle;
 
         if (lane.getPrefix().equals("NORTH") || lane.getPrefix().equals("SOUTH")) {
@@ -138,7 +136,7 @@ public class IntersectionController implements TrafficLaneObserver {
         vehicles.computeIfAbsent(lane, k -> new ArrayList<>()).add(vehicle);
     }
 
-    public void moveVehicle(LaneType lane, int count) {
+    private void moveVehicle(LaneType lane, int count) {
         List<Rectangle> vehicleList = vehicles.get(lane);
 
         if (lane == LaneType.NORTH_FORWARD || lane == LaneType.SOUTH_FORWARD) {
@@ -184,7 +182,7 @@ public class IntersectionController implements TrafficLaneObserver {
         transition.play();
     }
 
-    public void rotateTowards(Rectangle vehicle, LaneType lane, Point2D from, Point2D to) {
+    private void rotateTowards(Rectangle vehicle, LaneType lane, Point2D from, Point2D to) {
         double deltaX = to.getX() - from.getX();
         double deltaY = to.getY() - from.getY();
 
